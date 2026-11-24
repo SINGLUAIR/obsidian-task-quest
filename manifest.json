@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-task-quest",
+	"name": "Task Quest",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "タスクを完了してレベルアップ！優先度・締め切り・タスク分解に対応したゲーム風タスク管理プラグイン。",
+	"author": "SINGLUAIR",
+	"authorUrl": "https://github.com/SINGLUAIR",
+	"isDesktopOnly": false
+}

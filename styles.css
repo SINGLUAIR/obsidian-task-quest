@@ -1,0 +1,274 @@
+/* =========================================================
+ * Task Quest - Obsidian に合わせた黒地 × 紫のテーマ
+ * ======================================================= */
+
+.tq-root,
+.tq-modal {
+	--tq-purple: #7c3aed;
+	--tq-purple-hover: #6d28d9;
+	--tq-purple-soft: rgba(124, 58, 237, 0.18);
+	--tq-red: #ef4444;
+	--tq-red-soft: rgba(239, 68, 68, 0.15);
+	--tq-bg: var(--background-primary, #1e1e1e);
+	--tq-card-bg: var(--background-secondary, #262626);
+	--tq-border: var(--background-modifier-border, #3a3a3a);
+	--tq-text: var(--text-normal, #dcddde);
+	--tq-muted: var(--text-muted, #999);
+}
+
+.tq-root {
+	background: var(--tq-bg);
+	color: var(--tq-text);
+	padding: 12px !important;
+}
+
+/* ---------- ボタン ---------- */
+.tq-btn {
+	border: none;
+	border-radius: 6px;
+	padding: 6px 14px;
+	font-weight: 600;
+	cursor: pointer;
+	box-shadow: none;
+	transition: background 0.15s ease, transform 0.05s ease;
+}
+.tq-btn:active { transform: scale(0.97); }
+
+.tq-btn-primary {
+	background: var(--tq-purple) !important;
+	color: #fff !important;
+}
+.tq-btn-primary:hover { background: var(--tq-purple-hover) !important; }
+
+.tq-btn-secondary {
+	background: var(--tq-purple-soft) !important;
+	color: #c4b5fd !important;
+	border: 1px solid var(--tq-purple);
+}
+.tq-btn-secondary:hover { background: rgba(124, 58, 237, 0.3) !important; }
+
+.tq-btn-danger {
+	background: var(--tq-red) !important;
+	color: #fff !important;
+}
+.tq-btn-danger:hover { background: #dc2626 !important; }
+
+.tq-icon-btn {
+	background: transparent !important;
+	box-shadow: none !important;
+	border: none;
+	padding: 4px;
+	color: var(--tq-muted);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+.tq-icon-btn:hover { color: #c4b5fd; }
+.tq-icon-btn-danger:hover { color: var(--tq-red); }
+.tq-icon-btn svg { width: 16px; height: 16px; }
+
+/* ---------- ヘッダー（レベル表示） ---------- */
+.tq-header {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 14px;
+}
+
+.tq-level {
+	background: var(--tq-card-bg);
+	border: 1px solid var(--tq-purple);
+	border-radius: 10px;
+	padding: 10px 12px;
+}
+
+.tq-level-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.tq-level-badge {
+	background: var(--tq-purple);
+	color: #fff;
+	font-weight: 700;
+	font-size: 1.1em;
+	padding: 2px 10px;
+	border-radius: 999px;
+}
+
+.tq-level-total { color: var(--tq-muted); font-size: 0.9em; }
+.tq-level-next { color: var(--tq-muted); font-size: 0.8em; margin-top: 4px; }
+
+.tq-add-btn { width: 100%; padding: 8px 14px; }
+
+/* ---------- ゲージ ---------- */
+.tq-bar {
+	flex: 1;
+	height: 10px;
+	background: var(--background-modifier-border, #333);
+	border-radius: 999px;
+	overflow: hidden;
+}
+.tq-bar-fill {
+	height: 100%;
+	background: linear-gradient(90deg, #7c3aed, #a78bfa);
+	border-radius: 999px;
+	transition: width 0.3s ease;
+}
+
+/* ---------- タスクカード ---------- */
+.tq-list { display: flex; flex-direction: column; gap: 10px; }
+
+.tq-empty {
+	color: var(--tq-muted);
+	text-align: center;
+	padding: 24px 8px;
+	font-size: 0.9em;
+}
+
+.tq-card {
+	background: var(--tq-card-bg);
+	border: 2px solid var(--tq-border);
+	border-radius: 10px;
+	padding: 10px 12px;
+}
+
+.tq-card-urgent {
+	border-color: var(--tq-red);
+	box-shadow: 0 0 0 1px var(--tq-red-soft), 0 0 12px rgba(239, 68, 68, 0.25);
+}
+
+.tq-card-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.tq-card-title {
+	flex: 1;
+	font-weight: 700;
+	font-size: 1.05em;
+	word-break: break-word;
+}
+
+.tq-card-actions { display: flex; gap: 2px; }
+
+.tq-badge {
+	font-size: 0.75em;
+	font-weight: 700;
+	padding: 1px 8px;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.tq-badge-low { background: rgba(148, 163, 184, 0.2); color: #cbd5e1; }
+.tq-badge-medium { background: rgba(96, 165, 250, 0.2); color: #93c5fd; }
+.tq-badge-high { background: rgba(251, 146, 60, 0.2); color: #fdba74; }
+.tq-badge-urgent { background: var(--tq-red); color: #fff; }
+
+.tq-deadline {
+	margin-top: 6px;
+	font-size: 0.85em;
+	color: var(--tq-muted);
+}
+.tq-deadline-near {
+	color: var(--tq-red);
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+.tq-desc {
+	margin-top: 6px;
+	font-size: 0.9em;
+	white-space: pre-wrap;
+	color: var(--tq-text);
+	opacity: 0.85;
+}
+
+.tq-subtasks {
+	margin-top: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.tq-subtask {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	cursor: pointer;
+	font-size: 0.92em;
+}
+.tq-subtask input[type="checkbox"] { accent-color: var(--tq-purple); margin: 0; }
+.tq-subtask-done { text-decoration: line-through; color: var(--tq-muted); }
+
+.tq-progress {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 8px;
+}
+.tq-progress-text {
+	font-size: 0.8em;
+	font-weight: 700;
+	color: #c4b5fd;
+	min-width: 3em;
+	text-align: right;
+}
+
+.tq-done-btn { margin-top: 8px; }
+
+/* ---------- モーダル（フォーム） ---------- */
+.tq-modal .modal-content { color: var(--tq-text); }
+
+.tq-form { display: flex; flex-direction: column; gap: 12px; }
+.tq-field { display: flex; flex-direction: column; gap: 4px; }
+.tq-label { font-weight: 600; font-size: 0.9em; color: #c4b5fd; }
+
+.tq-input { width: 100%; }
+.tq-input:focus { border-color: var(--tq-purple) !important; box-shadow: 0 0 0 2px var(--tq-purple-soft) !important; }
+.tq-textarea { min-height: 70px; resize: vertical; }
+
+.tq-sub-rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 6px; }
+.tq-sub-row { display: flex; align-items: center; gap: 4px; }
+
+.tq-modal-buttons {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 16px;
+}
+
+.tq-confirm-msg { white-space: pre-wrap; }
+
+/* ---------- 完了ポップアップ ---------- */
+.tq-complete-modal { max-width: 360px; border: 2px solid var(--tq-purple); }
+
+.tq-complete {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 0;
+	text-align: center;
+	animation: tq-pop 0.35s ease-out;
+}
+.tq-complete-icon { font-size: 3em; }
+.tq-complete-title { font-size: 1.8em; font-weight: 800; color: #c4b5fd; }
+.tq-complete-sub { color: var(--tq-muted); word-break: break-word; }
+.tq-levelup {
+	margin: 4px 0;
+	padding: 6px 14px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #7c3aed, #a78bfa);
+	color: #fff;
+	font-weight: 700;
+}
+
+@keyframes tq-pop {
+	0% { transform: scale(0.7); opacity: 0; }
+	70% { transform: scale(1.05); opacity: 1; }
+	100% { transform: scale(1); }
+}
